@@ -12,7 +12,7 @@ namespace HurriyetHaberMobile
 		public App ()
 		{
 			InitializeComponent();
-
+            //test
 			MainPage = new HurriyetHaberMobile.MainPage();
 		}
 
