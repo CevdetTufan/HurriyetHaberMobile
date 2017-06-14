@@ -12,8 +12,7 @@ namespace HurriyetHaberMobile
 		public App ()
 		{
 			InitializeComponent();
-            //test
-			MainPage = new HurriyetHaberMobile.MainPage();
+			MainPage = new HurriyetHaberMobile.Views.Articles();
 		}
 
 		protected override void OnStart ()
