@@ -1,4 +1,6 @@
-﻿using HurriyetHaberMobile.Service;
+﻿using HurriyetHaberMobile.Core;
+using HurriyetHaberMobile.Model;
+using HurriyetHaberMobile.Provider;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,102 +22,20 @@ namespace HurriyetHaberMobile.Views
         {
             InitializeComponent();
             HurriyetApi api = new HurriyetApi();
-            var articles = api.Get("v1/articles");
-            BindingContext = new ArticlesViewModel();
-        }
+            var articlesJson = api.Get("v1/articles");
 
-        void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
-            => ((ListView)sender).SelectedItem = null;
+            JsonModelMapper<ArticlesModel> jsonModel = new JsonModelMapper<ArticlesModel>();
+            var articles = jsonModel.GetList(articlesJson);
 
-        async void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            if (e.SelectedItem == null)
-                return;
+            var items = articles
+                .Where(q => q.Files.Count > 0)
+                .Select(s => new
+                {
+                    FileUrl = s.Files.FirstOrDefault().FileUrl,
+                    Title = s.Title
+                }).Take(10).ToList();
 
-            await DisplayAlert("Selected", e.SelectedItem.ToString(), "OK");
-
-            //Deselect Item
-            ((ListView)sender).SelectedItem = null;
-        }
-    }
-
-
-
-    class ArticlesViewModel : INotifyPropertyChanged
-    {
-        public ObservableCollection<Item> Items { get; }
-        public ObservableCollection<Grouping<string, Item>> ItemsGrouped { get; }
-
-        public ArticlesViewModel()
-        {
-            Items = new ObservableCollection<Item>(new[]
-            {
-                new Item { Text = "Baboon", Detail = "Africa & Asia" },
-                new Item { Text = "Capuchin Monkey", Detail = "Central & South America" },
-                new Item { Text = "Blue Monkey", Detail = "Central & East Africa" },
-                new Item { Text = "Squirrel Monkey", Detail = "Central & South America" },
-                new Item { Text = "Golden Lion Tamarin", Detail= "Brazil" },
-                new Item { Text = "Howler Monkey", Detail = "South America" },
-                new Item { Text = "Japanese Macaque", Detail = "Japan" },
-            });
-
-            var sorted = from item in Items
-                         orderby item.Text
-                         group item by item.Text[0].ToString() into itemGroup
-                         select new Grouping<string, Item>(itemGroup.Key, itemGroup);
-
-            ItemsGrouped = new ObservableCollection<Grouping<string, Item>>(sorted);
-
-            RefreshDataCommand = new Command(
-                async () => await RefreshData());
-        }
-
-        public ICommand RefreshDataCommand { get; }
-
-        async Task RefreshData()
-        {
-            IsBusy = true;
-            //Load Data Here
-            await Task.Delay(2000);
-
-            IsBusy = false;
-        }
-
-        bool busy;
-        public bool IsBusy
-        {
-            get { return busy; }
-            set
-            {
-                busy = value;
-                OnPropertyChanged();
-                ((Command)RefreshDataCommand).ChangeCanExecute();
-            }
-        }
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        void OnPropertyChanged([CallerMemberName]string propertyName = "") =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-        public class Item
-        {
-            public string Text { get; set; }
-            public string Detail { get; set; }
-
-            public override string ToString() => Text;
-        }
-
-        public class Grouping<K, T> : ObservableCollection<T>
-        {
-            public K Key { get; private set; }
-
-            public Grouping(K key, IEnumerable<T> items)
-            {
-                Key = key;
-                foreach (var item in items)
-                    this.Items.Add(item);
-            }
+            listView.ItemsSource = items;
         }
     }
 }

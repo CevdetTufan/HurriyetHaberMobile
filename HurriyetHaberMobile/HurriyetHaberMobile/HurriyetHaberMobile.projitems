@@ -12,10 +12,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\JsonModelMapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Service\HurriyetApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ArticlesModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\FilesModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MetadataModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Provider\HurriyetApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Provider\IService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Provider\ServiceBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Articles.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
