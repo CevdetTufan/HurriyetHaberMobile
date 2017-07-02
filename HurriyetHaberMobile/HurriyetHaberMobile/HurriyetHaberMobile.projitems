@@ -16,13 +16,20 @@
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ArticlesDetailModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ArticlesDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ArticlesListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\ArticlesModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\FilesModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\MetadataModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\RelatedNew.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Provider\HurriyetApi.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Provider\IService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Provider\ServiceBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Articles.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Detail.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -38,6 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Articles.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Detail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

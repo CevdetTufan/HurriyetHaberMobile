@@ -82,5 +82,7 @@ D:\workspace\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android
 D:\workspace\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\android\assets\System.IO.Compression.dll.mdb
 D:\workspace\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\android\assets\System.Numerics.dll.mdb
 D:\workspace\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\android\assets\System.Runtime.Serialization.Primitives.dll.mdb
+D:\workspace\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\HurriyetHaberMobile.Droid.Views.Detail.xaml.g.cs
+D:\workspace\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android\bin\Debug\Xamarin.Forms.CarouselView.dll
 D:\workspace\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\HurriyetHaberMobile.Android.dll.mdb
 D:\workspace\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android\bin\Debug\HurriyetHaberMobile.Android.dll.mdb

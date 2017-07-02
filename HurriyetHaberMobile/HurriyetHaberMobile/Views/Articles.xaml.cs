@@ -29,13 +29,29 @@ namespace HurriyetHaberMobile.Views
 
             var items = articles
                 .Where(q => q.Files.Count > 0)
-                .Select(s => new
+                .Select(s => new ArticlesListViewModel
                 {
+                    Id = s.Id,
                     FileUrl = s.Files.FirstOrDefault().FileUrl,
-                    Title = s.Title
+                    Title = s.Title,
+                    Path = s.Path
                 }).Take(10).ToList();
 
             listView.ItemsSource = items;
+        }
+
+
+        private async void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null) return;
+
+            ArticlesListViewModel selectedItem = (ArticlesListViewModel)e.SelectedItem;
+
+            //navigate to Detail page
+            await Navigation.PushModalAsync(new Detail(selectedItem));
+
+            var lv=(ListView)sender;
+            lv.SelectedItem = null;
         }
     }
 }

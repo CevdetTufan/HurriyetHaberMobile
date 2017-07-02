@@ -3,17 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HurriyetHaberMobile.Views.Articles"
              Title="ListView">
-    <ListView x:Name="listView">
+    <ListView x:Name="listView" ItemSelected="listView_ItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
-                    <StackLayout Orientation="Vertical">
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="{Binding FileUrl}" WidthRequest="40" MinimumWidthRequest="40" HeightRequest="40" MinimumHeightRequest="40" ></Image>
-                            <Label Text="{Binding Title}}"></Label>
-                        </StackLayout>
-                    </StackLayout>
-                </ViewCell>
+                <ImageCell ImageSource="{Binding FileUrl}" Text="{Binding Title}" TextColor="#f46508" Detail="{Binding Path}" DetailColor="#333"></ImageCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
