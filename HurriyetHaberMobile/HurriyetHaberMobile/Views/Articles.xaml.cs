@@ -1,15 +1,7 @@
 ﻿using HurriyetHaberMobile.Core;
 using HurriyetHaberMobile.Model;
 using HurriyetHaberMobile.Provider;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -34,14 +26,15 @@ namespace HurriyetHaberMobile.Views
                     Id = s.Id,
                     FileUrl = s.Files.FirstOrDefault().FileUrl,
                     Title = s.Title,
-                    Path = s.Path
+                    Path = $"{s.Path.TagSubstring()} - {s.ModifiedDate.ToDate().ToString("dd.MM.yyyy HH:ss")}",
+                    Tags = s.Tags.Count > 0 ? $"Tags : {s.Tags.StringListToString()}" : string.Empty
                 }).Take(10).ToList();
 
             listView.ItemsSource = items;
+            listView.ItemSelected += ListView_ItemSelected;
         }
 
-
-        private async void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null) return;
 
@@ -50,7 +43,7 @@ namespace HurriyetHaberMobile.Views
             //navigate to Detail page
             await Navigation.PushModalAsync(new Detail(selectedItem));
 
-            var lv=(ListView)sender;
+            var lv = (ListView)sender;
             lv.SelectedItem = null;
         }
     }

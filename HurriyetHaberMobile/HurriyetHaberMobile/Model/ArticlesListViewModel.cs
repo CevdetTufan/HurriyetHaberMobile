@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace HurriyetHaberMobile.Model
+﻿namespace HurriyetHaberMobile.Model
 {
     public class ArticlesListViewModel
     {
@@ -8,5 +6,6 @@ namespace HurriyetHaberMobile.Model
         public string FileUrl { get; set; }
         public string Title { get; set; }
         public string Path { get; set; }
+        public string Tags { get; set; }
     }
 }

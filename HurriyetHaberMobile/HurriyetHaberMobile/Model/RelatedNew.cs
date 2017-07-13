@@ -7,7 +7,7 @@ namespace HurriyetHaberMobile.Model
         public string Id { get; set; }
         public string Description { get; set; }
         public List<FilesModel> Files { get; set; }
-        public List<object> RelatedNews { get; set; }
+        public List<RelatedNew> RelatedNews { get; set; }
         public string StartDate { get; set; }
         public List<string> Tags { get; set; }
         public string Title { get; set; }

@@ -28,5 +28,18 @@ namespace HurriyetHaberMobile.Views
             cvImages.ItemsSource = article.Files;
             lblTitle.Text = article.Title;
         }
+        public Detail()
+        {
+            InitializeComponent();
+
+            HurriyetApi api = new HurriyetApi();
+            var articlesJson = api.Get($"v1/articles/40518710");
+
+            JsonModelMapper<ArticlesDetailModel> jsonModel = new JsonModelMapper<ArticlesDetailModel>();
+            var article = jsonModel.GetItem(articlesJson);
+
+            cvImages.ItemsSource = article.Files;
+            lblTitle.Text = article.Title;
+        }
 	}
 }

@@ -12,6 +12,6 @@
                 <Image Source="{Binding FileUrl}"></Image>
             </DataTemplate>
         </cv:CarouselView>
-       
+
     </StackLayout>
 </ContentPage>
