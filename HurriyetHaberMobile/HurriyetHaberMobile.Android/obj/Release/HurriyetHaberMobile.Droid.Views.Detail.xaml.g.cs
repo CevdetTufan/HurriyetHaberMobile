@@ -11,8 +11,8 @@
 namespace HurriyetHaberMobile.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\ct\\projects\\github\\HurriyetHaberMobile\\HurriyetHaberMobile\\HurriyetHaberMobile" +
-        "\\Views\\Detail.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\ct\\projects\\github\\hma\\HurriyetHaberMobile\\HurriyetHaberMobile\\Views\\Detail.xa" +
+        "ml")]
     public partial class Detail : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

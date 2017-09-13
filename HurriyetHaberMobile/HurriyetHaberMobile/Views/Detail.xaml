@@ -3,15 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HurriyetHaberMobile.Views.Detail"
              xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
+    
+    <ContentPage.Content>
+        <StackLayout>
 
-    <StackLayout>
-
-        <Label x:Name="lblTitle"></Label>
-        <cv:CarouselView  x:Name="cvImages">
-            <DataTemplate>
-                <Image Source="{Binding FileUrl}"></Image>
-            </DataTemplate>
-        </cv:CarouselView>
-
-    </StackLayout>
+            <Label x:Name="lblTitle"></Label>
+            <cv:CarouselView  x:Name="cvImages" ItemsSource="{Binding .}">
+                <cv:CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding FileUrl}"></Image>
+                    </DataTemplate>
+                </cv:CarouselView.ItemTemplate>
+            </cv:CarouselView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

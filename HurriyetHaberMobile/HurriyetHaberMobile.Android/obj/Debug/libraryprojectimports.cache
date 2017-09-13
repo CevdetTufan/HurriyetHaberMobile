@@ -2,9 +2,9 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>C:\ct\projects\github\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.CarouselView\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\ct\projects\github\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\ct\projects\github\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\ct\projects\github\hma\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.CarouselView\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\ct\projects\github\hma\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\ct\projects\github\hma\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\Xamarin.Forms.CarouselView\library_project_imports\assets</ResolvedAssetDirectory>
@@ -13,8 +13,8 @@
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>C:\ct\projects\github\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.CarouselView.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\ct\projects\github\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\ct\projects\github\HurriyetHaberMobile\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\ct\projects\github\hma\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.CarouselView.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\ct\projects\github\hma\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\ct\projects\github\hma\HurriyetHaberMobile\HurriyetHaberMobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>
