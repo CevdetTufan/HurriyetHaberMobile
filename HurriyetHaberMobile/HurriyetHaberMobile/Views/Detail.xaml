@@ -5,16 +5,25 @@
              xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
     
     <ContentPage.Content>
-        <StackLayout>
-
-            <Label x:Name="lblTitle"></Label>
-            <cv:CarouselView  x:Name="cvImages" ItemsSource="{Binding .}">
+ 
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".5*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" x:Name="lblTitle"></Label>
+            
+            <cv:CarouselView Grid.Row="1" x:Name="cvImages" ItemsSource="{Binding .}">
                 <cv:CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Image Source="{Binding FileUrl}"></Image>
+
                     </DataTemplate>
                 </cv:CarouselView.ItemTemplate>
             </cv:CarouselView>
-        </StackLayout>
+            
+            <Label Grid.Row="2" x:Name="lblDescription"></Label>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
