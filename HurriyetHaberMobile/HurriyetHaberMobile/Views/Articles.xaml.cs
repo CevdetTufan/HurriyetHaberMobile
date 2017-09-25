@@ -10,11 +10,12 @@ namespace HurriyetHaberMobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Articles : ContentPage
     {
+        private int coumter = 0;
         public Articles()
         {
             InitializeComponent();
             HurriyetApi api = new HurriyetApi();
-            var articlesJson = api.Get("v1/articles");
+            var articlesJson = api.Get($"v1/articles?$top=10&$skip={coumter * 10}");
 
             JsonModelMapper<ArticlesModel> jsonModel = new JsonModelMapper<ArticlesModel>();
             var articles = jsonModel.GetList(articlesJson);
@@ -28,11 +29,13 @@ namespace HurriyetHaberMobile.Views
                     Title = s.Title,
                     Path = $"{s.Path.TagSubstring()} - {s.ModifiedDate.ToDate().ToString("dd.MM.yyyy HH:ss")}",
                     Tags = s.Tags.Count > 0 ? $"Tags : {s.Tags.StringListToString()}" : string.Empty
-                }).Take(10).ToList();
+                }).ToList();
 
             listView.ItemsSource = items;
             listView.ItemSelected += ListView_ItemSelected;
         }
+
+       
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
