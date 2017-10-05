@@ -25,11 +25,15 @@ namespace HurriyetHaberMobile.Views {
         private global::Xamarin.Forms.Label lblDescription;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::HurriyetHaberMobile.CustomRenderer.HtmlLabel lblText;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Detail));
             lblTitle = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblTitle");
             cvImages = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.CarouselView>(this, "cvImages");
             lblDescription = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblDescription");
+            lblText = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::HurriyetHaberMobile.CustomRenderer.HtmlLabel>(this, "lblText");
         }
     }
 }

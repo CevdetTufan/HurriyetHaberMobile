@@ -1,2 +1,2 @@
-android.app.Application
-HurriyetHaberMobile.Android
+android.support.multidex.MultiDexApplication
+HurriyetHaberMobile.Android.ct

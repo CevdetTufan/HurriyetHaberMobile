@@ -18,7 +18,6 @@ namespace HurriyetHaberMobile.Views
 		public Detail (ArticlesListViewModel model)
 		{
 			InitializeComponent ();
-
             HurriyetApi api = new HurriyetApi();
             var articlesJson = api.Get($"v1/articles/{model.Id}");
 
@@ -28,6 +27,8 @@ namespace HurriyetHaberMobile.Views
             cvImages.ItemsSource = article.Files;
             lblTitle.Text = article.Title;
             lblDescription.Text = article.Description;
+            lblText.Text =  article.Text;
+            
         }
 	}
 }

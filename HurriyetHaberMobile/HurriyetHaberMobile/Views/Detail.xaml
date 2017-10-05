@@ -2,28 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HurriyetHaberMobile.Views.Detail"
-             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
-    
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             xmlns:local="clr-namespace:HurriyetHaberMobile.CustomRenderer" >
+
     <ContentPage.Content>
- 
-        <Grid>
+        <Grid RowSpacing="20" Margin="15,15,15,15" VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
-                <RowDefinition Height=".1*"></RowDefinition>
-                <RowDefinition Height=".5*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" x:Name="lblTitle"></Label>
-            
+            <Label Grid.Row="0" x:Name="lblTitle" FontSize="20" TextColor="Black"></Label>
+
             <cv:CarouselView Grid.Row="1" x:Name="cvImages" ItemsSource="{Binding .}">
                 <cv:CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding FileUrl}"></Image>
-
+                        <Image Source="{Binding FileUrl}" Aspect="AspectFill"></Image>
                     </DataTemplate>
                 </cv:CarouselView.ItemTemplate>
             </cv:CarouselView>
-            
-            <Label Grid.Row="2" x:Name="lblDescription"></Label>
+
+            <Label Grid.Row="2" x:Name="lblDescription" FontSize="Micro" ></Label>
+            <!--<Label Grid.Row="3" x:Name="lblText" FontSize="Medium"></Label>-->
+            <local:HtmlLabel Grid.Row="3" x:Name="lblText" FontSize="Medium" ></local:HtmlLabel>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

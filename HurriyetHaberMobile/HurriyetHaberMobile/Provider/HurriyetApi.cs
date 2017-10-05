@@ -4,7 +4,7 @@ namespace HurriyetHaberMobile.Provider
 {
     public class HurriyetApi : ServiceBase
     {
-        private readonly string apiKey = "hurriyet_api_key";
+        private readonly string apiKey = "hurriyet api key";
         private readonly string host = "https://api.hurriyet.com.tr";
         public override string Get(string address)
         {

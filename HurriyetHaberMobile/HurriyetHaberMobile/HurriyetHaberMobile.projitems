@@ -14,6 +14,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Core\JsonModelMapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\TextExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomRenderer\HtmlLabel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
